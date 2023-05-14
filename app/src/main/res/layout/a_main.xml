@@ -11,9 +11,7 @@
             android:id="@+id/ivLogo"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="16dp"
+            android:layout_margin="16dp"
             android:layout_weight="1"
             app:srcCompat="@drawable/ic_launcher"
             tools:ignore="ContentDescription" />
@@ -27,9 +25,6 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:paddingStart="24dp"
-                android:paddingEnd="24dp"
-                android:paddingBottom="8dp"
                 tools:context="com.roy.activities.MainActivity">
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -37,12 +32,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="24dp"
                     android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
                     tools:text="Running: 4:49 remaining" />
 
             <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvHint1"
                     android:layout_width="wrap_content"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="24dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
                     android:gravity="center"
@@ -52,6 +51,8 @@
                     android:id="@+id/tvHint2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="24dp"
                     android:layout_marginTop="8dp"
                     android:gravity="center"
                     android:text="@string/hint_2" />
@@ -60,6 +61,8 @@
                     android:id="@+id/btToggleCoffee"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
                     android:layout_marginTop="24dp"
                     android:padding="16dp"
                     android:text="@string/toggle_coffee" />
@@ -69,7 +72,9 @@
                     style="@style/Widget.Material3.Button.OutlinedButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="16dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="24dp"
                     android:text="@string/add_toggle_to_home"
                     android:textColor="?colorOnBackground" />
 
@@ -79,6 +84,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="24dp"
                     android:text="@string/add_tile"
                     android:textColor="?colorOnBackground" />
 
@@ -88,51 +96,66 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="24dp"
                     android:text="@string/settings"
                     android:textColor="?colorOnBackground" />
 
-            <androidx.appcompat.widget.LinearLayoutCompat
+            <HorizontalScrollView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:scrollbars="none">
 
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                        android:id="@+id/btRateApp"
+                <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="bottom|end"
-                        android:layout_margin="16dp"
-                        android:contentDescription="@string/app_name"
-                        app:srcCompat="@drawable/baseline_star_rate_24" />
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp">
 
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                        android:id="@+id/btMoreApp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom|end"
-                        android:layout_margin="16dp"
-                        android:contentDescription="@string/app_name"
-                        app:srcCompat="@drawable/baseline_get_app_24" />
+                    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                            android:id="@+id/btPolicy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/share_app"
+                            android:text="@string/share_app"
+                            app:icon="@drawable/baseline_local_police_24" />
 
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                        android:id="@+id/btShareApp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom|end"
-                        android:layout_margin="16dp"
-                        android:contentDescription="@string/app_name"
-                        app:srcCompat="@drawable/baseline_share_24" />
+                    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                            android:id="@+id/btRateApp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:contentDescription="@string/rate_app"
+                            android:text="@string/rate_app"
+                            app:icon="@drawable/baseline_star_rate_24" />
 
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                        android:id="@+id/btPolicy"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom|end"
-                        android:layout_margin="16dp"
-                        android:contentDescription="@string/app_name"
-                        app:srcCompat="@drawable/baseline_local_police_24" />
-            </androidx.appcompat.widget.LinearLayoutCompat>
+                    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                            android:id="@+id/btMoreApp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:contentDescription="@string/more_apps"
+                            android:text="@string/more_apps"
+                            app:icon="@drawable/baseline_get_app_24" />
+
+                    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                            android:id="@+id/btShareApp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:contentDescription="@string/share_app"
+                            android:text="@string/share_app"
+                            app:icon="@drawable/baseline_share_24" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </HorizontalScrollView>
+
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.core.widget.NestedScrollView>
 

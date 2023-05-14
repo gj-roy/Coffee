@@ -10,8 +10,8 @@ android {
         applicationId "com.roy93group.coffee"
         minSdkVersion 21
         targetSdkVersion 33
-        versionCode 20230514
-        versionName "2023.05.14"
+        versionCode 20230515
+        versionName "2023.05.15"
     }
 
     compileOptions {
