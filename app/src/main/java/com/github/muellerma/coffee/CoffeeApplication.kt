@@ -8,6 +8,17 @@ import com.github.muellerma.coffee.tiles.ToggleTile
 import com.google.android.material.color.DynamicColors
 import kotlin.time.Duration
 
+//TODO ic launcher
+//TODo color
+//TODO rate app
+//TODO share app
+//TODO more app
+//TODO policy
+//TODO leak canary
+//TODO keystore
+//TODO ad
+//TODO firebase
+//TODO ad id, internet permission in manifest
 class CoffeeApplication : Application() {
     var observers = mutableListOf<ServiceStatusObserver>()
     var lastStatusUpdate: ServiceStatus = ServiceStatus.Stopped
@@ -40,6 +51,7 @@ sealed class ServiceStatus {
     class Running(val remaining: Duration?) : ServiceStatus() {
         override fun toString() = "${Running::class.java.simpleName}(${remaining?.inWholeSeconds})"
     }
+
     object Stopped : ServiceStatus() {
         override fun toString(): String = Stopped::class.java.simpleName
     }
