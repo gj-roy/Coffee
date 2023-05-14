@@ -1,4 +1,4 @@
-package com.github.muellerma.coffee
+package com.roy
 
 import android.annotation.SuppressLint
 import android.app.*
@@ -10,6 +10,10 @@ import android.util.Log
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.getSystemService
+import com.github.muellerma.coffee.CoffeeApplication
+import com.github.muellerma.coffee.R
+import com.github.muellerma.coffee.ServiceStatus
+import com.github.muellerma.coffee.ServiceStatusObserver
 import kotlinx.coroutines.*
 import kotlin.time.Duration.Companion.minutes
 import kotlin.time.Duration.Companion.seconds
@@ -30,10 +34,12 @@ class ForegroundService : Service(), ServiceStatusObserver {
                 changeState(this, STATE.STOP, false)
                 return START_STICKY
             }
+
             ACTION_CHANGE_PREF_TIMEOUT -> {
                 Log.d(TAG, "Change timeout")
                 prefs.timeout = prefs.nextTimeout
             }
+
             ACTION_CHANGE_PREF_ALLOW_DIMMING -> {
                 Log.d(TAG, "Change allow dimming")
                 prefs.allowDimming = !prefs.allowDimming
@@ -193,7 +199,11 @@ class ForegroundService : Service(), ServiceStatusObserver {
         return NotificationCompat.Action(
             R.drawable.ic_baseline_access_time_24,
             getString(R.string.timeout_next),
-            getPendingIntentForService(intent, PendingIntent_Immutable or PendingIntent.FLAG_UPDATE_CURRENT, 1)
+            getPendingIntentForService(
+                intent,
+                PendingIntent_Immutable or PendingIntent.FLAG_UPDATE_CURRENT,
+                1
+            )
         )
     }
 
@@ -201,15 +211,24 @@ class ForegroundService : Service(), ServiceStatusObserver {
         val intent = Intent(this, ForegroundService::class.java).apply {
             action = ACTION_CHANGE_PREF_ALLOW_DIMMING
         }
-        val title = if (prefs.allowDimming) R.string.allow_dimming_disable else R.string.allow_dimming_enable
+        val title =
+            if (prefs.allowDimming) R.string.allow_dimming_disable else R.string.allow_dimming_enable
         return NotificationCompat.Action(
             R.drawable.ic_baseline_brightness_medium_24,
             getString(title),
-            getPendingIntentForService(intent, PendingIntent_Immutable or PendingIntent.FLAG_UPDATE_CURRENT, 2)
+            getPendingIntentForService(
+                intent,
+                PendingIntent_Immutable or PendingIntent.FLAG_UPDATE_CURRENT,
+                2
+            )
         )
     }
 
-    private fun getPendingIntentForService(intent: Intent, flags: Int, requestCode: Int): PendingIntent {
+    private fun getPendingIntentForService(
+        intent: Intent,
+        flags: Int,
+        requestCode: Int
+    ): PendingIntent {
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             PendingIntent.getForegroundService(this, requestCode, intent, flags)
         } else {
@@ -224,8 +243,7 @@ class ForegroundService : Service(), ServiceStatusObserver {
         stopWakeLockOrAlternateMode()
         timeoutJob?.cancel(CancellationException("Coffee was stopped"))
         Prefs(applicationContext)
-            .sharedPrefs.
-            unregisterOnSharedPreferenceChangeListener(prefsChangeListener)
+            .sharedPrefs.unregisterOnSharedPreferenceChangeListener(prefsChangeListener)
         if (isScreenStateListenerRegistered) {
             unregisterReceiver(screenStateListener)
             isScreenStateListenerRegistered = false

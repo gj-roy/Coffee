@@ -5,7 +5,8 @@
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS"
+    <uses-permission
+            android:name="android.permission.WRITE_SETTINGS"
             tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
@@ -32,8 +33,8 @@
 
         <activity
                 android:name=".activities.PreferenceActivity"
-                android:label="@string/settings"
-                android:exported="false" />
+                android:exported="false"
+                android:label="@string/settings" />
 
         <activity
                 android:name=".activities.CoffeeInvisibleActivity"
@@ -45,19 +46,20 @@
                 android:name=".BootReceiver"
                 android:exported="false">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
 
         <service
                 android:name=".tiles.ToggleTile"
+                android:exported="true"
                 android:icon="@drawable/ic_twotone_free_breakfast_24"
                 android:label="@string/toggle_coffee"
-                android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
-                android:exported="true">
+                android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
+
             <meta-data
                     android:name="android.service.quicksettings.ACTIVE_TILE"
                     android:value="true" />
@@ -68,13 +70,14 @@
 
         <service
                 android:name=".tiles.TimeoutTile"
+                android:exported="true"
                 android:icon="@drawable/ic_twotone_free_breakfast_24"
                 android:label="@string/timeout_next"
-                android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
-                android:exported="true">
+                android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
+
             <meta-data
                     android:name="android.service.quicksettings.ACTIVE_TILE"
                     android:value="true" />
@@ -84,14 +87,14 @@
         </service>
 
         <service
-                android:name=".ForegroundService"
+                android:name="com.roy.ForegroundService"
                 android:enabled="true"
                 android:exported="false" />
 
         <service
                 android:name=".InteractionService"
-                android:permission="android.permission.BIND_VOICE_INTERACTION"
-                android:exported="true">
+                android:exported="true"
+                android:permission="android.permission.BIND_VOICE_INTERACTION">
             <meta-data
                     android:name="android.voice_interaction"
                     android:resource="@xml/voice_interaction_service" />
@@ -100,6 +103,7 @@
                 <action android:name="android.service.voice.VoiceInteractionService" />
             </intent-filter>
         </service>
+
         <service
                 android:name=".InteractionSessionService"
                 android:permission="android.permission.BIND_VOICE_INTERACTION" />

@@ -7,8 +7,8 @@ import android.util.Log
 import androidx.annotation.RequiresApi
 import com.github.muellerma.coffee.R
 import com.github.muellerma.coffee.ServiceStatus
-import com.github.muellerma.coffee.coffeeApp
-import com.github.muellerma.coffee.toFormattedTime
+import com.roy.coffeeApp
+import com.roy.toFormattedTime
 
 @RequiresApi(Build.VERSION_CODES.N)
 abstract class AbstractTile : TileService() {

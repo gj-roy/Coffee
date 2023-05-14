@@ -1,9 +1,10 @@
-package com.github.muellerma.coffee
+package com.roy
 
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.core.content.edit
 import androidx.preference.PreferenceManager
+import com.github.muellerma.coffee.R
 
 class Prefs(private val context: Context) {
     var sharedPrefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)

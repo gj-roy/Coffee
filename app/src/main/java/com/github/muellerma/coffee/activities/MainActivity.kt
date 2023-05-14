@@ -19,6 +19,10 @@ import com.github.muellerma.coffee.*
 import com.github.muellerma.coffee.databinding.AMainBinding
 import com.github.muellerma.coffee.tiles.ToggleTile
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.roy.ForegroundService
+import com.roy.hasPermissions
+import com.roy.showToast
+import com.roy.toFormattedTime
 import java.util.concurrent.Executor
 
 class MainActivity : AppCompatActivity(), ServiceStatusObserver {

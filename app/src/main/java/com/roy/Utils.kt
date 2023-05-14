@@ -1,4 +1,4 @@
-package com.github.muellerma.coffee
+package com.roy
 
 import android.app.Activity
 import android.app.PendingIntent
@@ -17,6 +17,8 @@ import android.widget.Toast
 import androidx.annotation.CheckResult
 import androidx.annotation.StringRes
 import androidx.core.app.ActivityCompat
+import com.github.muellerma.coffee.CoffeeApplication
+import com.github.muellerma.coffee.R
 import kotlin.time.Duration
 
 private const val TAG = "Utils"

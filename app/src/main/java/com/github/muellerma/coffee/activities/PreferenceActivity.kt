@@ -11,8 +11,8 @@ import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.github.muellerma.coffee.R
 import com.github.muellerma.coffee.databinding.APreferenceBinding
-import com.github.muellerma.coffee.openInBrowser
-import com.github.muellerma.coffee.openSystemScreenTimeoutPermissions
+import com.roy.openInBrowser
+import com.roy.openSystemScreenTimeoutPermissions
 import com.mikepenz.aboutlibraries.LibsBuilder
 import com.mikepenz.aboutlibraries.LibsConfiguration
 import com.mikepenz.aboutlibraries.entity.Library

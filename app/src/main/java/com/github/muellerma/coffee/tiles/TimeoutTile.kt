@@ -6,6 +6,9 @@ import android.os.Build
 import android.util.Log
 import androidx.annotation.RequiresApi
 import com.github.muellerma.coffee.*
+import com.roy.ForegroundService
+import com.roy.Prefs
+import com.roy.coffeeApp
 
 @RequiresApi(Build.VERSION_CODES.N)
 class TimeoutTile : AbstractTile() {
