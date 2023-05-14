@@ -40,21 +40,21 @@
             <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvHint1"
                     android:layout_width="wrap_content"
-                    android:paddingStart="24dp"
-                    android:paddingEnd="24dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
                     android:gravity="center"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="24dp"
                     android:text="@string/hint_1" />
 
             <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvHint2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingStart="24dp"
-                    android:paddingEnd="24dp"
                     android:layout_marginTop="8dp"
                     android:gravity="center"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="24dp"
                     android:text="@string/hint_2" />
 
             <com.google.android.material.button.MaterialButton
@@ -62,8 +62,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
-                    android:layout_marginEnd="24dp"
                     android:layout_marginTop="24dp"
+                    android:layout_marginEnd="24dp"
                     android:padding="16dp"
                     android:text="@string/toggle_coffee" />
 
@@ -83,10 +83,10 @@
                     style="@style/Widget.Material3.Button.OutlinedButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="16dp"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="24dp"
+                    android:padding="16dp"
                     android:text="@string/add_tile"
                     android:textColor="?colorOnBackground" />
 
@@ -95,34 +95,35 @@
                     style="@style/Widget.Material3.Button.OutlinedButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="16dp"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="24dp"
+                    android:padding="16dp"
                     android:text="@string/settings"
                     android:textColor="?colorOnBackground" />
 
             <HorizontalScrollView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
                     android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
                     android:scrollbars="none">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginBottom="16dp"
                         android:gravity="center"
-                        android:orientation="horizontal"
-                        android:paddingStart="16dp"
-                        android:paddingEnd="16dp">
+                        android:orientation="horizontal">
 
                     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
                             android:id="@+id/btPolicy"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:contentDescription="@string/share_app"
-                            android:text="@string/share_app"
+                            android:contentDescription="@string/policy"
+                            android:text="@string/policy"
                             app:icon="@drawable/baseline_local_police_24" />
 
                     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
@@ -147,6 +148,7 @@
                             android:id="@+id/btShareApp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginEnd="32dp"
                             android:layout_marginStart="16dp"
                             android:contentDescription="@string/share_app"
                             android:text="@string/share_app"
