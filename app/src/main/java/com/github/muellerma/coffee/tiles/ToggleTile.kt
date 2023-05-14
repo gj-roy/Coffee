@@ -7,6 +7,8 @@ import android.util.Log
 import androidx.annotation.RequiresApi
 import com.github.muellerma.coffee.*
 import com.roy.ForegroundService
+import com.roy.ServiceStatus
+import com.roy.ServiceStatusObserver
 
 @RequiresApi(Build.VERSION_CODES.N)
 class ToggleTile : AbstractTile() {

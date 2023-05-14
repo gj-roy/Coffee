@@ -8,6 +8,8 @@ import androidx.annotation.RequiresApi
 import com.github.muellerma.coffee.*
 import com.roy.ForegroundService
 import com.roy.Prefs
+import com.roy.ServiceStatus
+import com.roy.ServiceStatusObserver
 import com.roy.coffeeApp
 
 @RequiresApi(Build.VERSION_CODES.N)

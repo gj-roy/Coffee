@@ -19,7 +19,10 @@ import com.github.muellerma.coffee.*
 import com.github.muellerma.coffee.databinding.AMainBinding
 import com.github.muellerma.coffee.tiles.ToggleTile
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.roy.CoffeeApplication
 import com.roy.ForegroundService
+import com.roy.ServiceStatus
+import com.roy.ServiceStatusObserver
 import com.roy.hasPermissions
 import com.roy.showToast
 import com.roy.toFormattedTime

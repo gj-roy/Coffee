@@ -1,4 +1,4 @@
-package com.github.muellerma.coffee
+package com.roy
 
 import android.content.BroadcastReceiver
 import android.content.Context

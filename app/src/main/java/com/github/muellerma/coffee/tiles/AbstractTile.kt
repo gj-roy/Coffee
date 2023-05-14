@@ -6,7 +6,7 @@ import android.service.quicksettings.TileService
 import android.util.Log
 import androidx.annotation.RequiresApi
 import com.github.muellerma.coffee.R
-import com.github.muellerma.coffee.ServiceStatus
+import com.roy.ServiceStatus
 import com.roy.coffeeApp
 import com.roy.toFormattedTime
 
