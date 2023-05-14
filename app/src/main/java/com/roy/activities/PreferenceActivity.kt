@@ -74,7 +74,7 @@ class PreferenceActivity : AppCompatActivity() {
                     .withAboutIconShown(true)
                     .withAboutVersionShownName(true)
                     .withSortEnabled(true)
-                    .withListener(AboutButtonsListener())
+//                    .withListener(AboutButtonsListener())
                     .supportFragment()
 
                 parentFragmentManager.commit {
@@ -94,7 +94,6 @@ fun PreferenceFragmentCompat.getPreference(key: String) =
 class AboutButtonsListener : LibsConfiguration.LibsListener {
     override fun onExtraClicked(v: View, specialButton: SpecialButton): Boolean {
         val link = when (specialButton) {
-            //TODO loitp
             SpecialButton.SPECIAL1 -> "https://github.com/mueller-ma/Coffee/"
             SpecialButton.SPECIAL2 -> "https://f-droid.org/packages/com.github.muellerma.coffee/"
             SpecialButton.SPECIAL3 -> "https://crowdin.com/project/coffee-app"
