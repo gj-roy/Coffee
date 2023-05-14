@@ -14,9 +14,9 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
-            app:tint="@color/coffee_brown"
             android:layout_weight="1"
             app:srcCompat="@drawable/ic_twotone_free_breakfast_120"
+            app:tint="@color/coffee_brown"
             tools:ignore="ContentDescription" />
 
     <androidx.core.widget.NestedScrollView
