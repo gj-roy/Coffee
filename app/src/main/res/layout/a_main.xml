@@ -29,7 +29,7 @@
                 android:orientation="vertical"
                 android:paddingStart="24dp"
                 android:paddingEnd="24dp"
-                android:paddingBottom="24dp"
+                android:paddingBottom="8dp"
                 tools:context="com.roy.activities.MainActivity">
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -69,7 +69,6 @@
                     style="@style/Widget.Material3.Button.OutlinedButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
                     android:padding="16dp"
                     android:text="@string/add_toggle_to_home"
                     android:textColor="?colorOnBackground" />
@@ -79,7 +78,6 @@
                     style="@style/Widget.Material3.Button.OutlinedButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
                     android:padding="16dp"
                     android:text="@string/add_tile"
                     android:textColor="?colorOnBackground" />
@@ -89,10 +87,53 @@
                     style="@style/Widget.Material3.Button.OutlinedButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
                     android:padding="16dp"
                     android:text="@string/settings"
                     android:textColor="?colorOnBackground" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/btRateApp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|end"
+                        android:layout_margin="16dp"
+                        android:contentDescription="@string/app_name"
+                        app:srcCompat="@drawable/baseline_star_rate_24" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/btMoreApp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|end"
+                        android:layout_margin="16dp"
+                        android:contentDescription="@string/app_name"
+                        app:srcCompat="@drawable/baseline_get_app_24" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/btShareApp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|end"
+                        android:layout_margin="16dp"
+                        android:contentDescription="@string/app_name"
+                        app:srcCompat="@drawable/baseline_share_24" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/btPolicy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|end"
+                        android:layout_margin="16dp"
+                        android:contentDescription="@string/app_name"
+                        app:srcCompat="@drawable/baseline_local_police_24" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.core.widget.NestedScrollView>
+
 </androidx.appcompat.widget.LinearLayoutCompat>

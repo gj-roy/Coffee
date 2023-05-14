@@ -22,6 +22,10 @@ import com.roy.R
 import com.roy.ServiceStatus
 import com.roy.ServiceStatusObserver
 import com.roy.databinding.AMainBinding
+import com.roy.ext.moreApp
+import com.roy.ext.openBrowserPolicy
+import com.roy.ext.rateApp
+import com.roy.ext.shareApp
 import com.roy.hasPermissions
 import com.roy.showToast
 import com.roy.tiles.ToggleTile
@@ -104,6 +108,19 @@ class MainActivity : AppCompatActivity(), ServiceStatusObserver {
             }
         } else {
             binding.btAddTile.isGone = true
+        }
+
+        binding.btRateApp.setOnClickListener {
+            this.rateApp(this.packageName)
+        }
+        binding.btMoreApp.setOnClickListener {
+            this.moreApp()
+        }
+        binding.btShareApp.setOnClickListener {
+            this.shareApp()
+        }
+        binding.btPolicy.setOnClickListener {
+            this.openBrowserPolicy()
         }
     }
 
