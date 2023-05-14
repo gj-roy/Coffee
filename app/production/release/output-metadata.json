@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.roy93group.coffee",
+  "variantName": "productionRelease",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 20230514,
+      "versionName": "2023.05.14",
+      "outputFile": "com.roy93group.coffeerelease_2023.05.14_20230514.apk"
+    }
+  ],
+  "elementType": "File"
+}
