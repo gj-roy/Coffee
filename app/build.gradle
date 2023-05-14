@@ -3,7 +3,7 @@ apply plugin: "kotlin-android"
 apply plugin: "com.mikepenz.aboutlibraries.plugin"
 
 android {
-    namespace = "com.github.muellerma.coffee"
+    namespace = "com.roy"
     compileSdk 33
 
     defaultConfig {

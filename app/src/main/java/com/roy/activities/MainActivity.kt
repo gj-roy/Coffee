@@ -1,4 +1,4 @@
-package com.github.muellerma.coffee.activities
+package com.roy.activities
 
 import android.app.StatusBarManager
 import android.content.ComponentName
@@ -15,22 +15,27 @@ import androidx.core.content.pm.ShortcutManagerCompat
 import androidx.core.graphics.drawable.IconCompat
 import androidx.core.view.isGone
 import androidx.core.view.isVisible
-import com.github.muellerma.coffee.*
-import com.github.muellerma.coffee.databinding.AMainBinding
-import com.roy.tiles.ToggleTile
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.roy.CoffeeApplication
 import com.roy.ForegroundService
+import com.roy.R
 import com.roy.ServiceStatus
 import com.roy.ServiceStatusObserver
+import com.roy.databinding.AMainBinding
 import com.roy.hasPermissions
 import com.roy.showToast
+import com.roy.tiles.ToggleTile
 import com.roy.toFormattedTime
 import java.util.concurrent.Executor
 
 class MainActivity : AppCompatActivity(), ServiceStatusObserver {
+    companion object {
+        private val TAG = MainActivity::class.simpleName
+    }
+
     private lateinit var application: CoffeeApplication
     private lateinit var binding: AMainBinding
+
     private val notificationPermission = registerForActivityResult(
         ActivityResultContracts.RequestPermission(),
         ::handleNotificationPermission
@@ -63,7 +68,8 @@ class MainActivity : AppCompatActivity(), ServiceStatusObserver {
                     getShortcutInfo(false),
                     null
                 )
-                val message = if (success) R.string.add_toggle_to_home_success else R.string.add_toggle_to_home_no_success
+                val message =
+                    if (success) R.string.add_toggle_to_home_success else R.string.add_toggle_to_home_no_success
                 showToast(message)
             }
         }
@@ -83,11 +89,15 @@ class MainActivity : AppCompatActivity(), ServiceStatusObserver {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             binding.btAddTile.apply {
                 setOnClickListener {
-                    val statusBarManager = getSystemService<StatusBarManager>() ?: return@setOnClickListener
+                    val statusBarManager =
+                        getSystemService<StatusBarManager>() ?: return@setOnClickListener
                     statusBarManager.requestAddTileService(
                         ComponentName(this@MainActivity, ToggleTile::class.java),
                         getString(R.string.app_name),
-                        Icon.createWithResource(this@MainActivity, R.drawable.ic_twotone_free_breakfast_24),
+                        Icon.createWithResource(
+                            this@MainActivity,
+                            R.drawable.ic_twotone_free_breakfast_24
+                        ),
                         Executor { Log.d(TAG, "Executor") }
                     ) { resultCode -> Log.e(TAG, "Error adding tile $resultCode") }
                 }
@@ -164,7 +174,4 @@ class MainActivity : AppCompatActivity(), ServiceStatusObserver {
             .build()
     }
 
-    companion object {
-        private val TAG = MainActivity::class.simpleName
-    }
 }

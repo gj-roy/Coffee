@@ -1,4 +1,4 @@
-package com.github.muellerma.coffee.activities
+package com.roy.activities
 
 import android.app.Activity
 import android.os.Bundle
@@ -10,7 +10,7 @@ class CoffeeInvisibleActivity : Activity() {
         super.onCreate(savedInstanceState)
 
         if (intent?.action == ACTION_TOGGLE) {
-            Log.d(TAG, "Received toggle")
+//            Log.d(TAG, "Received toggle")
             ForegroundService.changeState(this, ForegroundService.Companion.STATE.TOGGLE, true)
         }
 
@@ -18,7 +18,7 @@ class CoffeeInvisibleActivity : Activity() {
     }
 
     companion object {
-        private val TAG = CoffeeInvisibleActivity::class.java.simpleName
+        //        private val TAG = CoffeeInvisibleActivity::class.java.simpleName
         const val ACTION_TOGGLE = "toggle"
     }
 }

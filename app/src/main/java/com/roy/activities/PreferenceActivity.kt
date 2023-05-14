@@ -1,4 +1,4 @@
-package com.github.muellerma.coffee.activities
+package com.roy.activities
 
 import android.os.Build
 import android.os.Bundle
@@ -9,15 +9,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
-import com.github.muellerma.coffee.R
-import com.github.muellerma.coffee.databinding.APreferenceBinding
-import com.roy.openInBrowser
-import com.roy.openSystemScreenTimeoutPermissions
 import com.mikepenz.aboutlibraries.LibsBuilder
 import com.mikepenz.aboutlibraries.LibsConfiguration
 import com.mikepenz.aboutlibraries.entity.Library
 import com.mikepenz.aboutlibraries.util.SpecialButton
-
+import com.roy.R
+import com.roy.databinding.APreferenceBinding
+import com.roy.openInBrowser
+import com.roy.openSystemScreenTimeoutPermissions
 
 class PreferenceActivity : AppCompatActivity() {
     private lateinit var binding: APreferenceBinding
@@ -42,6 +41,7 @@ class PreferenceActivity : AppCompatActivity() {
                 onBackPressedDispatcher.onBackPressed()
                 true
             }
+
             else -> super.onOptionsItemSelected(item)
         }
     }
@@ -58,8 +58,9 @@ class PreferenceActivity : AppCompatActivity() {
 
                 if (enabled &&
                     Build.VERSION.SDK_INT >= Build.VERSION_CODES.M &&
-                    !Settings.System.canWrite(context)) {
-                        context.openSystemScreenTimeoutPermissions()
+                    !Settings.System.canWrite(context)
+                ) {
+                    context.openSystemScreenTimeoutPermissions()
                 }
 
                 allowDimmingPref.isEnabled = !enabled
@@ -93,6 +94,7 @@ fun PreferenceFragmentCompat.getPreference(key: String) =
 class AboutButtonsListener : LibsConfiguration.LibsListener {
     override fun onExtraClicked(v: View, specialButton: SpecialButton): Boolean {
         val link = when (specialButton) {
+            //TODO loitp
             SpecialButton.SPECIAL1 -> "https://github.com/mueller-ma/Coffee/"
             SpecialButton.SPECIAL2 -> "https://f-droid.org/packages/com.github.muellerma.coffee/"
             SpecialButton.SPECIAL3 -> "https://crowdin.com/project/coffee-app"

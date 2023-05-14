@@ -12,7 +12,7 @@
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
-            android:name="com.roy.CoffeeApplication"
+            android:name=".CoffeeApplication"
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
@@ -43,7 +43,7 @@
                 android:theme="@android:style/Theme.NoDisplay" />
 
         <receiver
-                android:name="com.roy.BootReceiver"
+                android:name=".BootReceiver"
                 android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -51,7 +51,7 @@
         </receiver>
 
         <service
-                android:name="com.roy.tiles.ToggleTile"
+                android:name=".tiles.ToggleTile"
                 android:exported="true"
                 android:icon="@drawable/ic_twotone_free_breakfast_24"
                 android:label="@string/toggle_coffee"
@@ -69,7 +69,7 @@
         </service>
 
         <service
-                android:name="com.roy.tiles.TimeoutTile"
+                android:name=".tiles.TimeoutTile"
                 android:exported="true"
                 android:icon="@drawable/ic_twotone_free_breakfast_24"
                 android:label="@string/timeout_next"
@@ -87,12 +87,12 @@
         </service>
 
         <service
-                android:name="com.roy.ForegroundService"
+                android:name=".ForegroundService"
                 android:enabled="true"
                 android:exported="false" />
 
         <service
-                android:name="com.roy.InteractionService"
+                android:name=".InteractionService"
                 android:exported="true"
                 android:permission="android.permission.BIND_VOICE_INTERACTION">
             <meta-data
@@ -105,7 +105,7 @@
         </service>
 
         <service
-                android:name="com.roy.InteractionSessionService"
+                android:name=".InteractionSessionService"
                 android:permission="android.permission.BIND_VOICE_INTERACTION" />
     </application>
 </manifest>

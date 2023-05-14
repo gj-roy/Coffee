@@ -5,7 +5,6 @@ import android.content.Context
 import android.os.Build
 import android.util.Log
 import androidx.annotation.RequiresApi
-import com.github.muellerma.coffee.*
 import com.roy.ForegroundService
 import com.roy.Prefs
 import com.roy.ServiceStatus
