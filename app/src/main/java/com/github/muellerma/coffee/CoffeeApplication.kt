@@ -27,7 +27,7 @@ class CoffeeApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        PreferenceManager.setDefaultValues(this, R.xml.pref_main, false)
+        PreferenceManager.setDefaultValues(this, R.xml.db_pref_main, false)
         DynamicColors.applyToActivitiesIfAvailable(this)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             observers.add(ToggleTile.TileServiceStatusObserver(this))

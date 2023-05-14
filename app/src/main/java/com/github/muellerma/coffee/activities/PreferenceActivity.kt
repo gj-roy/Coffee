@@ -48,7 +48,7 @@ class PreferenceActivity : AppCompatActivity() {
 
     class MainSettingsFragment : PreferenceFragmentCompat() {
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-            addPreferencesFromResource(R.xml.pref_main)
+            addPreferencesFromResource(R.xml.db_pref_main)
 
             val allowDimmingPref = getPreference("allow_dimming")
             val alternateModePref = getPreference("alternate_mode")

@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto">
     <PreferenceCategory>
         <ListPreference
+                android:defaultValue="0"
+                android:entries="@array/timeout_labels"
+                android:entryValues="@array/timeout_values"
                 android:key="timeout"
                 android:title="@string/timeout"
-                android:entryValues="@array/timeout_values"
-                android:entries="@array/timeout_labels"
-                android:defaultValue="0"
                 app:useSimpleSummaryProvider="true" />
         <SwitchPreferenceCompat
+                android:defaultValue="false"
                 android:key="allow_dimming"
-                android:title="@string/allow_dimming_title"
                 android:summary="@string/allow_dimming_summary"
-                android:defaultValue="false" />
+                android:title="@string/allow_dimming_title" />
         <SwitchPreferenceCompat
+                android:defaultValue="false"
                 android:key="alternate_mode"
-                android:title="@string/alternate_mode_title"
                 android:summary="@string/alternate_mode_summary"
-                android:defaultValue="false" />
+                android:title="@string/alternate_mode_title" />
     </PreferenceCategory>
     <PreferenceCategory>
         <Preference
