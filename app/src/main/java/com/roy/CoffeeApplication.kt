@@ -11,15 +11,16 @@ import com.google.android.material.color.DynamicColors
 //TODO share app
 //TODO more app
 //TODO policy
-//TODO leak canary
 //TODO keystore
+
 //TODO ad
 //TODO firebase
-//TODO ad id, internet permission in manifest
 
 //done
 //ic launcher
 //color
+//ad id, internet permission in manifest
+//leak canary
 class CoffeeApplication : Application() {
     var observers = mutableListOf<ServiceStatusObserver>()
     var lastStatusUpdate: ServiceStatus = ServiceStatus.Stopped
