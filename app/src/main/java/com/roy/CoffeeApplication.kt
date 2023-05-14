@@ -4,10 +4,9 @@ import android.app.Application
 import android.os.Build
 import androidx.preference.PreferenceManager
 import com.github.muellerma.coffee.R
-import com.github.muellerma.coffee.tiles.TimeoutTile
-import com.github.muellerma.coffee.tiles.ToggleTile
+import com.roy.tiles.TimeoutTile
+import com.roy.tiles.ToggleTile
 import com.google.android.material.color.DynamicColors
-import kotlin.time.Duration
 
 //TODO ic launcher
 //TODo color

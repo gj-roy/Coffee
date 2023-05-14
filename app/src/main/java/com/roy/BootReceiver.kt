@@ -4,8 +4,8 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.os.Build
-import com.github.muellerma.coffee.tiles.TimeoutTile
-import com.github.muellerma.coffee.tiles.ToggleTile
+import com.roy.tiles.TimeoutTile
+import com.roy.tiles.ToggleTile
 
 class BootReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {

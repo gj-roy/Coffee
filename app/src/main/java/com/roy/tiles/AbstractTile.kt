@@ -1,4 +1,4 @@
-package com.github.muellerma.coffee.tiles
+package com.roy.tiles
 
 import android.os.Build
 import android.service.quicksettings.Tile

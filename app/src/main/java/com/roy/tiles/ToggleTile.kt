@@ -1,4 +1,4 @@
-package com.github.muellerma.coffee.tiles
+package com.roy.tiles
 
 import android.content.ComponentName
 import android.content.Context
@@ -13,7 +13,7 @@ import com.roy.ServiceStatusObserver
 @RequiresApi(Build.VERSION_CODES.N)
 class ToggleTile : AbstractTile() {
     override fun onClick() {
-        Log.d(TAG, "onClick()")
+//        Log.d(TAG, "onClick()")
         ForegroundService.changeState(this, ForegroundService.Companion.STATE.TOGGLE, false)
     }
 
@@ -22,11 +22,12 @@ class ToggleTile : AbstractTile() {
         private val TAG = ToggleTile::class.java.simpleName
 
         fun requestTileStateUpdate(context: Context) {
-            Log.d(TAG, "requestTileStateUpdate()")
+//            Log.d(TAG, "requestTileStateUpdate()")
             try {
                 requestListeningState(context, ComponentName(context, ToggleTile::class.java))
             } catch (e: Exception) {
-                Log.e(TAG, "Error when calling requestListeningState()", e)
+                e.printStackTrace()
+//                Log.e(TAG, "Error when calling requestListeningState()", e)
             }
         }
     }
