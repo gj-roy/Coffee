@@ -16,14 +16,14 @@ import androidx.core.graphics.drawable.IconCompat
 import androidx.core.view.isGone
 import androidx.core.view.isVisible
 import com.github.muellerma.coffee.*
-import com.github.muellerma.coffee.databinding.ActivityMainBinding
+import com.github.muellerma.coffee.databinding.AMainBinding
 import com.github.muellerma.coffee.tiles.ToggleTile
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.util.concurrent.Executor
 
 class MainActivity : AppCompatActivity(), ServiceStatusObserver {
     private lateinit var application: CoffeeApplication
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: AMainBinding
     private val notificationPermission = registerForActivityResult(
         ActivityResultContracts.RequestPermission(),
         ::handleNotificationPermission
@@ -32,13 +32,13 @@ class MainActivity : AppCompatActivity(), ServiceStatusObserver {
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.d(TAG, "onCreate()")
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = AMainBinding.inflate(layoutInflater)
         application = getApplication() as CoffeeApplication
         setContentView(binding.root)
 
         supportActionBar?.hide()
 
-        binding.toggleCoffee.apply {
+        binding.btToggleCoffee.apply {
             setOnClickListener {
                 ForegroundService.changeState(
                     this@MainActivity,
@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity(), ServiceStatusObserver {
             }
         }
 
-        binding.addToggleToHome.apply {
+        binding.btAddToggleToHome.apply {
             isVisible = ShortcutManagerCompat.isRequestPinShortcutSupported(this@MainActivity)
             setOnClickListener {
                 val success = ShortcutManagerCompat.requestPinShortcut(
@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity(), ServiceStatusObserver {
             ShortcutManagerCompat.addDynamicShortcuts(this, listOf(getShortcutInfo(true)))
         }
 
-        binding.settings.apply {
+        binding.btSettings.apply {
             setOnClickListener {
                 Intent(this@MainActivity, PreferenceActivity::class.java).apply {
                     startActivity(this)
@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity(), ServiceStatusObserver {
         }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            binding.addTile.apply {
+            binding.btAddTile.apply {
                 setOnClickListener {
                     val statusBarManager = getSystemService<StatusBarManager>() ?: return@setOnClickListener
                     statusBarManager.requestAddTileService(
@@ -86,7 +86,7 @@ class MainActivity : AppCompatActivity(), ServiceStatusObserver {
                 }
             }
         } else {
-            binding.addTile.isGone = true
+            binding.btAddTile.isGone = true
         }
     }
 
@@ -105,7 +105,7 @@ class MainActivity : AppCompatActivity(), ServiceStatusObserver {
     }
 
     override fun onServiceStatusUpdate(status: ServiceStatus) {
-        binding.status.text = when (status) {
+        binding.tvStatus.text = when (status) {
             is ServiceStatus.Stopped -> getString(R.string.turned_off)
             is ServiceStatus.Running -> {
                 if (status.remaining == null) {

@@ -10,7 +10,7 @@ import androidx.fragment.app.commit
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.github.muellerma.coffee.R
-import com.github.muellerma.coffee.databinding.ActivityPreferenceBinding
+import com.github.muellerma.coffee.databinding.APreferenceBinding
 import com.github.muellerma.coffee.openInBrowser
 import com.github.muellerma.coffee.openSystemScreenTimeoutPermissions
 import com.mikepenz.aboutlibraries.LibsBuilder
@@ -20,11 +20,11 @@ import com.mikepenz.aboutlibraries.util.SpecialButton
 
 
 class PreferenceActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityPreferenceBinding
+    private lateinit var binding: APreferenceBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityPreferenceBinding.inflate(layoutInflater)
+        binding = APreferenceBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
