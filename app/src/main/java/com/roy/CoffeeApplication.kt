@@ -7,8 +7,6 @@ import com.roy.tiles.TimeoutTile
 import com.roy.tiles.ToggleTile
 import com.google.android.material.color.DynamicColors
 
-//TODO ic launcher
-//TODo color
 //TODO rate app
 //TODO share app
 //TODO more app
@@ -20,7 +18,8 @@ import com.google.android.material.color.DynamicColors
 //TODO ad id, internet permission in manifest
 
 //done
-
+//ic launcher
+//color
 class CoffeeApplication : Application() {
     var observers = mutableListOf<ServiceStatusObserver>()
     var lastStatusUpdate: ServiceStatus = ServiceStatus.Stopped
