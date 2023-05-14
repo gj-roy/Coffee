@@ -2,7 +2,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation, ExtraTranslation">
     <!-- Common strings -->
     <!-- Feel free to actually translate the title -->
-    <string name="app_name">Καφές</string>
     <string name="turned_on">Ενεργοποιήθηκε</string>
     <string name="turned_on_remaining">Ενεργοποίησε στις: %s απομένουν</string>
     <string name="turned_off">Απενεργοποίηση</string>

@@ -2,7 +2,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation, ExtraTranslation">
     <!-- Common strings -->
     <!-- Feel free to actually translate the title -->
-    <string name="app_name">咖啡 Coffee</string>
     <string name="turned_on">已打开</string>
     <string name="turned_on_remaining">已转到: %s</string>
     <string name="turned_off">关闭</string>

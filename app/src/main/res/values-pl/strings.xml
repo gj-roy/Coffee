@@ -2,7 +2,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation, ExtraTranslation">
     <!-- Common strings -->
     <!-- Feel free to actually translate the title -->
-    <string name="app_name">Kawa</string>
     <string name="turned_on">Włączony</string>
     <string name="turned_on_remaining">Włączono: pozostało %s</string>
     <string name="turned_off">Wyłączony</string>

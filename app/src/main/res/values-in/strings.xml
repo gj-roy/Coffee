@@ -2,7 +2,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation, ExtraTranslation">
     <!-- Common strings -->
     <!-- Feel free to actually translate the title -->
-    <string name="app_name">Kopi</string>
     <string name="toggle_coffee">Beralih Kopi</string>
     <!-- MainActivity -->
     <string name="hint_1">Aplikasi ini menyediakan ubin dalam pengaturan cepat (tempat beralih untuk mis. Wi-Fi dan Bluetooth) yang memungkinkan anda untuk menjaga tampilan tetap aktif tanpa harus mengubah pengaturan perangkat.</string>

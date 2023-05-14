@@ -7,8 +7,6 @@ import com.roy.tiles.TimeoutTile
 import com.roy.tiles.ToggleTile
 import com.google.android.material.color.DynamicColors
 
-//TODO keystore
-
 //TODO ad
 //TODO firebase
 
@@ -21,6 +19,7 @@ import com.google.android.material.color.DynamicColors
 //share app
 //more app
 //policy
+//keystore
 class CoffeeApplication : Application() {
     var observers = mutableListOf<ServiceStatusObserver>()
     var lastStatusUpdate: ServiceStatus = ServiceStatus.Stopped

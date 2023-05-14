@@ -2,7 +2,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation, ExtraTranslation">
     <!-- Common strings -->
     <!-- Feel free to actually translate the title -->
-    <string name="app_name">Káva</string>
     <string name="turned_on">Zapnuto</string>
     <string name="turned_on_remaining">Zapnuto: %s zbývá</string>
     <string name="turned_off">Vypnuto</string>

@@ -2,7 +2,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation, ExtraTranslation">
     <!-- Common strings -->
     <!-- Feel free to actually translate the title -->
-    <string name="app_name">Café</string>
     <string name="turned_on">Activé</string>
     <string name="turned_on_remaining">Activé le : %s restants</string>
     <string name="turned_off">Éteint</string>
