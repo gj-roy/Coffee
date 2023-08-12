@@ -3,6 +3,7 @@ package com.roy.activities
 import android.app.StatusBarManager
 import android.content.ComponentName
 import android.content.Intent
+import android.graphics.Color
 import android.graphics.drawable.Icon
 import android.os.Build
 import android.os.Bundle
@@ -15,6 +16,7 @@ import androidx.core.content.pm.ShortcutManagerCompat
 import androidx.core.graphics.drawable.IconCompat
 import androidx.core.view.isGone
 import androidx.core.view.isVisible
+import com.applovin.mediation.ads.MaxAdView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.roy.CoffeeApplication
 import com.roy.ForegroundService
@@ -22,6 +24,7 @@ import com.roy.R
 import com.roy.ServiceStatus
 import com.roy.ServiceStatusObserver
 import com.roy.databinding.AMainBinding
+import com.roy.ext.createAdBanner
 import com.roy.ext.moreApp
 import com.roy.ext.openBrowserPolicy
 import com.roy.ext.rateApp
@@ -39,6 +42,7 @@ class MainActivity : AppCompatActivity(), ServiceStatusObserver {
 
     private lateinit var application: CoffeeApplication
     private lateinit var binding: AMainBinding
+    private var adView: MaxAdView? = null
 
     private val notificationPermission = registerForActivityResult(
         ActivityResultContracts.RequestPermission(),
@@ -122,6 +126,13 @@ class MainActivity : AppCompatActivity(), ServiceStatusObserver {
         binding.btPolicy.setOnClickListener {
             this.openBrowserPolicy()
         }
+
+        adView = this@MainActivity.createAdBanner(
+            logTag = MainActivity::class.java.simpleName,
+            bkgColor = Color.TRANSPARENT,
+            viewGroup = binding.flAd,
+            isAdaptiveBanner = true,
+        )
     }
 
     override fun onResume() {
@@ -136,6 +147,11 @@ class MainActivity : AppCompatActivity(), ServiceStatusObserver {
         Log.d(TAG, "onPause()")
         super.onPause()
         application.observers.remove(this)
+    }
+
+    override fun onDestroy() {
+        adView?.destroy()
+        super.onDestroy()
     }
 
     override fun onServiceStatusUpdate(status: ServiceStatus) {
