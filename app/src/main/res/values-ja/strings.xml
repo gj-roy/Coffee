@@ -2,10 +2,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation, ExtraTranslation">
     <!-- Common strings -->
     <!-- Feel free to actually translate the title -->
-    <string name="turned_on">オンになりました</string>
-    <string name="turned_on_remaining">ターンオン: 残り %s</string>
-    <string name="turned_off">オフにしました</string>
-    <string name="app_name">コーヒー</string>
     <string name="turned_on">有効</string>
     <string name="turned_on_remaining">有効: 残り %s</string>
     <string name="turned_off">無効</string>
