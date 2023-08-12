@@ -8,17 +8,14 @@ on:
   schedule:
     - cron: '34 19 * * 6'
 
+permissions: {}
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
-
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v2
-        with:
-          languages: "java"
 
       - name: Setup Java
         uses: actions/setup-java@v3
@@ -27,12 +24,7 @@ jobs:
           java-version: 17
 
       - name: Validate Gradle Wrapper
-        uses: gradle/wrapper-validation-action@v1.0.6
+        uses: gradle/wrapper-validation-action@v1.1.0
 
       - name: Build
         run: bash gradlew build
-
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v2
-        with:
-          category: "/language:java"

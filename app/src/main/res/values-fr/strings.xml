@@ -10,6 +10,7 @@
     <string name="hint_1">Cette application fournit une tuile dans les widgets (l\'endroit où se trouvent les notifications, p. ex. Wi-Fi et Bluetooth) qui vous permet de garder l\'affichage allumé sans avoir à modifier les paramètres de l\'appareil.</string>
     <string name="hint_2">Café peut être arrêté en cliquant sur le widget ou sur la notification ou encore lorsque l\'écran est éteint manuellement.</string>
     <string name="add_toggle_to_home">Ajouter un raccourci à l\'écran d\'accueil</string>
+    <string name="add_tile">Ajouter une vignette</string>
     <string name="add_toggle_to_home_success">Ajouté à l\'écran d\'accueil</string>
     <string name="add_toggle_to_home_no_success">Erreur lors de l\'ajout à l\'écran d\'accueil</string>
     <string name="notification_permission">Permission d\'afficher les notifications est requise</string>

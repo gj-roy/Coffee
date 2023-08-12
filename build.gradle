@@ -1,7 +1,7 @@
 buildscript {
-    ext.kotlin_version = "1.8.21"
-    ext.kotlin_coroutines_version = "1.6.4"
-    ext.about_libraries_version = "10.6.2"
+    ext.kotlin_version = "1.9.0"
+    ext.kotlin_coroutines_version = "1.7.3"
+    ext.about_libraries_version="10.8.3"
 
     repositories {
         google()
@@ -11,7 +11,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.0.1'
+        classpath 'com.android.tools.build:gradle:8.1.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "com.mikepenz.aboutlibraries.plugin:aboutlibraries-plugin:$about_libraries_version"
     }
