@@ -6,6 +6,7 @@ import androidx.preference.PreferenceManager
 import com.roy.tiles.TimeoutTile
 import com.roy.tiles.ToggleTile
 import com.google.android.material.color.DynamicColors
+import com.roy.ext.setupApplovinAd
 
 //TODO ad
 //TODO firebase
@@ -27,6 +28,8 @@ class CoffeeApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+
+        setupApplovinAd()
 
         PreferenceManager.setDefaultValues(this, R.xml.db_pref_main, false)
         DynamicColors.applyToActivitiesIfAvailable(this)
