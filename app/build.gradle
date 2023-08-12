@@ -10,8 +10,8 @@ android {
         applicationId "com.roy93group.coffee"
         minSdkVersion 21
         targetSdkVersion 33
-        versionCode 20230515
-        versionName "2023.05.15"
+        versionCode 20230812
+        versionName "2023.08.12"
     }
 
     compileOptions {
@@ -59,8 +59,8 @@ android {
         }
     }
 
-    android.applicationVariants.all { variant ->
-        variant.outputs.all {
+    android.applicationVariants.configureEach { variant ->
+        variant.outputs.configureEach {
             outputFileName = defaultConfig.applicationId + buildType.name + "_" + defaultConfig.versionName + "_" + defaultConfig.versionCode + ".apk"
         }
     }
@@ -97,7 +97,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation "androidx.core:core-ktx:1.10.1"
     implementation "androidx.appcompat:appcompat:1.6.1"
-    implementation "androidx.fragment:fragment-ktx:1.5.7"
+    implementation "androidx.fragment:fragment-ktx:1.6.1"
     implementation "com.google.android.material:material:1.9.0"
     implementation "androidx.preference:preference-ktx:1.2.0"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines_version"
