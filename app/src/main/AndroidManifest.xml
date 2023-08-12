@@ -32,7 +32,9 @@
                 <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
             </intent-filter>
         </activity>
-
+        <meta-data
+                android:name="applovin.sdk.key"
+                android:value="@string/SDK_KEY" />
         <activity
                 android:name=".activities.PreferenceActivity"
                 android:exported="false"

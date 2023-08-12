@@ -69,25 +69,31 @@ android {
     productFlavors {
 
         dev {
-//            applicationId = "com.roygroup.base.dev"
+//            applicationId = "com.roy93group.coffee.dev"
             dimension "type"
             buildConfigField("String", "FLAVOR_buildEnv", '"dev"')
             resValue "string", "app_name", "Coffee DEV"
 
-//            resValue("string", "SDK_KEY", "e75FnQfS9XTTqM1Kne69U7PW_MBgAnGQTFvtwVVui6kRPKs5L7ws9twr5IQWwVfzPKZ5pF2IfDa7lguMgGlCyt")
-//            resValue "string", "BANNER", "18a3d1924d3ebee6"
-//            resValue "string", "INTER", "895d5d41cb20edb7"
+            resValue("string", "SDK_KEY", "e75FnQfS9XTTqM1Kne69U7PW_MBgAnGQTFvtwVVui6kRPKs5L7ws9twr5IQWwVfzPKZ5pF2IfDa7lguMgGlCyt")
+            resValue("string", "BANNER", "72c1af05477d125b")
+            resValue("string", "INTER", "f8e8d93b2e8c6549")
+
+            resValue("string", "EnableAdInter", "true")
+            resValue("string", "EnableAdBanner", "true")
         }
 
         production {
-//            applicationId = "com.roygroup.base.prod"
+//            applicationId = "com.roy93group.coffee.prod"
             dimension "type"
             buildConfigField("String", "FLAVOR_buildEnv", '"prod"')
             resValue "string", "app_name", "Coffee"
 
-//            resValue("string", "SDK_KEY", "e75FnQfS9XTTqM1Kne69U7PW_MBgAnGQTFvtwVVui6kRPKs5L7ws9twr5IQWwVfzPKZ5pF2IfDa7lguMgGlCyt")
-//            resValue "string", "BANNER", "18a3d1924d3ebee6"
-//            resValue "string", "INTER", "895d5d41cb20edb7"
+            resValue("string", "SDK_KEY", "e75FnQfS9XTTqM1Kne69U7PW_MBgAnGQTFvtwVVui6kRPKs5L7ws9twr5IQWwVfzPKZ5pF2IfDa7lguMgGlCyt")
+            resValue("string", "BANNER", "72c1af05477d125b")
+            resValue("string", "INTER", "f8e8d93b2e8c6549")
+
+            resValue("string", "EnableAdInter", "true")
+            resValue("string", "EnableAdBanner", "true")
         }
 
     }
@@ -103,5 +109,6 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines_version"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines_version"
     implementation "com.mikepenz:aboutlibraries:$about_libraries_version"
+    implementation 'com.applovin:applovin-sdk:11.11.1'
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.10'
 }
